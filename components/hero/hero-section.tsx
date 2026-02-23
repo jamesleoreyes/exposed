@@ -71,7 +71,7 @@ export function HeroSection({
           <h1 className="max-w-xl text-center text-xl font-normal tracking-tight text-foreground/80 md:text-2xl">
             We know this because you loaded a webpage.
           </h1>
-          <p className="max-w-md text-center text-sm text-muted-foreground">
+          <p className="max-w-xl text-center text-sm text-muted-foreground">
             No login. No cookies accepted. No permissions granted. Just a single
             page load.
           </p>

@@ -143,7 +143,7 @@ export function HomePage() {
         />
 
         {/* Section divider */}
-        <div className="mx-auto max-w-5xl px-4 pb-6">
+        <div className="mx-auto max-w-6xl px-4 pb-6">
           <div className="flex items-center gap-3">
             <div className="h-px flex-1 bg-border" />
             <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground/40">
@@ -153,7 +153,7 @@ export function HomePage() {
           </div>
         </div>
 
-        <section className="mx-auto max-w-5xl px-4 pb-20">
+        <section className="mx-auto max-w-6xl px-4 pb-20">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             {categories.map((cat, index) => (
               <motion.div
