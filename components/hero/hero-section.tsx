@@ -49,7 +49,7 @@ export function HeroSection({
               ...
             </span>
           )}
-          {city && country && (
+          {city && country && city !== "Localhost" && country !== "Local" && (
             <motion.span
               className="font-mono text-sm text-muted-foreground"
               initial={{ opacity: 0 }}

@@ -26,13 +26,14 @@ export async function GET(request: NextRequest) {
       isp: "Local Network",
       lat: 0,
       lon: 0,
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
     });
   }
 
   try {
     // ip-api.com: free, no key needed, 45 req/min
     const res = await fetch(
-      `http://ip-api.com/json/${ip}?fields=status,message,country,regionName,city,isp,lat,lon`,
+      `http://ip-api.com/json/${ip}?fields=status,message,country,regionName,city,isp,lat,lon,timezone`,
       { next: { revalidate: 300 } }
     );
     const data = await res.json();
@@ -46,6 +47,7 @@ export async function GET(request: NextRequest) {
         isp: "Unknown",
         lat: 0,
         lon: 0,
+        timezone: null,
       });
     }
 
@@ -57,6 +59,7 @@ export async function GET(request: NextRequest) {
       isp: data.isp ?? "Unknown",
       lat: data.lat ?? 0,
       lon: data.lon ?? 0,
+      timezone: data.timezone ?? null,
     });
   } catch {
     return NextResponse.json({
@@ -67,6 +70,7 @@ export async function GET(request: NextRequest) {
       isp: "Unknown",
       lat: 0,
       lon: 0,
+      timezone: null,
     });
   }
 }

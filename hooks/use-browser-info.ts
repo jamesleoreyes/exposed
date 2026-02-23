@@ -25,7 +25,7 @@ export function useBrowserInfo() {
         languages: Array.from(navigator.languages),
         cookieEnabled: navigator.cookieEnabled,
         doNotTrack: navigator.doNotTrack,
-        pdfViewerEnabled: (navigator as any).pdfViewerEnabled ?? false,
+        pdfViewerEnabled: "pdfViewerEnabled" in navigator ? (navigator as Navigator & { pdfViewerEnabled: boolean }).pdfViewerEnabled : false,
         webdriver: navigator.webdriver,
       });
     } catch (err) {

@@ -20,6 +20,7 @@ export interface NetworkInfo {
   rtt: number | null;
   saveData: boolean | null;
   enriched: boolean;
+  ipTimezone: string | null;
 }
 
 export interface BrowserInfo {

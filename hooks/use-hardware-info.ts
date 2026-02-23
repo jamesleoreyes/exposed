@@ -29,7 +29,7 @@ export function useHardwareInfo() {
 
       setData({
         cpuCores: navigator.hardwareConcurrency,
-        deviceMemory: (navigator as any).deviceMemory ?? null,
+        deviceMemory: "deviceMemory" in navigator ? (navigator as Navigator & { deviceMemory: number }).deviceMemory : null,
         screenWidth: screen.width,
         screenHeight: screen.height,
         screenColorDepth: screen.colorDepth,

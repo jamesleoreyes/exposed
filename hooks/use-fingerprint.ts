@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { useNetworkInfo } from "@/hooks/use-network-info";
 import { useBrowserInfo } from "@/hooks/use-browser-info";
 import { useHardwareInfo } from "@/hooks/use-hardware-info";
@@ -31,11 +31,11 @@ export function useFingerprint() {
   const behavioral = useBehavioral();
 
   const [compositeHash, setCompositeHash] = useState<string | null>(null);
-  const [uniquenessScore, setUniquenessScore] = useState<{
-    score: number;
-    totalBits: number;
-    breakdown: Array<{ label: string; bits: number }>;
-  } | null>(null);
+  const [collectionTimeMs, setCollectionTimeMs] = useState<number | null>(null);
+  const startTime = useRef(0);
+  useEffect(() => {
+    startTime.current = Date.now();
+  }, []);
 
   const allLoaded =
     !network.loading &&
@@ -50,7 +50,13 @@ export function useFingerprint() {
     !permissions.loading &&
     !media.loading;
 
-  // Compute composite hash when all data hooks finish loading
+  // Record collection time when all hooks finish
+  useEffect(() => {
+    if (!allLoaded) return;
+    setCollectionTimeMs(Date.now() - startTime.current);
+  }, [allLoaded]);
+
+  // Compute composite hash when all data hooks finish loading (async, needs effect)
   useEffect(() => {
     if (!allLoaded) return;
 
@@ -71,11 +77,11 @@ export function useFingerprint() {
     compute();
   }, [allLoaded, canvas.data?.hash, webgl.data?.hash, audio.data?.hash, fonts.data?.hash]);
 
-  // Compute uniqueness score when all data hooks finish loading
-  useEffect(() => {
-    if (!allLoaded) return;
+  // Compute uniqueness score synchronously via useMemo (no async needed)
+  const uniquenessScore = useMemo(() => {
+    if (!allLoaded) return null;
 
-    const result = computeUniquenessScore({
+    return computeUniquenessScore({
       browser: browser.data,
       hardware: hardware.data,
       canvas: canvas.data,
@@ -86,8 +92,6 @@ export function useFingerprint() {
       storage: storage.data,
       media: media.data,
     });
-
-    setUniquenessScore(result);
   }, [
     allLoaded,
     browser.data,
@@ -116,6 +120,7 @@ export function useFingerprint() {
     behavioral,
     compositeHash,
     uniquenessScore,
+    collectionTimeMs,
     loading: !allLoaded,
     breakdown: uniquenessScore?.breakdown ?? null,
   };
