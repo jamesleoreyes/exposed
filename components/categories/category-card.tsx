@@ -31,7 +31,7 @@ export function CategoryCard({
 }: CategoryCardProps) {
   return (
     <div className="border border-border bg-card">
-      {/* Card header — minimal, institutional */}
+      {/* Card header */}
       <div className="flex items-center justify-between border-b border-border px-4 py-3">
         <div className="flex items-center gap-2 text-muted-foreground">
           {icon}
@@ -42,7 +42,7 @@ export function CategoryCard({
         <ThreatBadge risk={risk} />
       </div>
 
-      {/* Finding — the plain-English revelation */}
+      {/* Finding */}
       <div className="border-b border-border/50 px-4 py-4">
         {loading ? (
           <Skeleton className="h-5 w-3/4" />
@@ -53,7 +53,7 @@ export function CategoryCard({
         )}
       </div>
 
-      {/* Evidence — the raw data */}
+      {/* Evidence */}
       <div className="px-4 py-3">
         {loading ? (
           <div className="space-y-2.5">
@@ -66,11 +66,11 @@ export function CategoryCard({
         )}
       </div>
 
-      {/* Why this matters — expandable */}
+      {/* Why this matters */}
       <div className="border-t border-border/50 px-4">
         <Accordion type="single" collapsible>
           <AccordionItem value="why-it-matters" className="border-b-0">
-            <AccordionTrigger className="py-2.5 text-[11px] font-mono uppercase tracking-wider text-muted-foreground/60 hover:text-muted-foreground hover:no-underline">
+            <AccordionTrigger className="py-2.5 text-[11px] font-mono uppercase tracking-wider text-muted-foreground hover:text-foreground hover:no-underline">
               Why this matters
             </AccordionTrigger>
             <AccordionContent>

@@ -15,7 +15,7 @@ interface Props {
 export function MediaDevicesDisplay({ data, loading }: Props) {
   const totalDevices = data ? data.audioinput + data.audiooutput + data.videoinput : 0;
   const finding = data
-    ? `We can count ${totalDevices} media device${totalDevices !== 1 ? "s" : ""} connected to your system — ${data.videoinput} camera${data.videoinput !== 1 ? "s" : ""}, ${data.audioinput} microphone${data.audioinput !== 1 ? "s" : ""}, and ${data.audiooutput} audio output${data.audiooutput !== 1 ? "s" : ""}. Plus ${data.supportedCodecs.length} supported codecs.`
+    ? `We can count ${totalDevices} media device${totalDevices !== 1 ? "s" : ""} connected to your system: ${data.videoinput} camera${data.videoinput !== 1 ? "s" : ""}, ${data.audioinput} microphone${data.audioinput !== 1 ? "s" : ""}, and ${data.audiooutput} audio output${data.audiooutput !== 1 ? "s" : ""}. Plus ${data.supportedCodecs.length} supported codecs.`
     : "Enumerating your media devices...";
 
   return (

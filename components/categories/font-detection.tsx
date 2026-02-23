@@ -14,7 +14,7 @@ interface Props {
 
 export function FontDetectionDisplay({ data, loading }: Props) {
   const finding = data
-    ? `We silently detected ${data.detected.length} fonts installed on your computer out of ${data.tested} tested. Your font collection is remarkably distinctive — like a fingerprint made of typefaces.`
+    ? `We silently detected ${data.detected.length} fonts installed on your computer out of ${data.tested} tested. Your font collection is remarkably distinctive, like a fingerprint made of typefaces.`
     : "Probing your installed fonts...";
 
   return (

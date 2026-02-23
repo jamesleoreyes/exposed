@@ -1,4 +1,4 @@
-// Fonts to probe — mix of common, platform-specific, and uncommon discriminators
+// Fonts to probe - mix of common, platform-specific, and uncommon discriminators
 export const FONT_LIST = [
   // Windows common
   "Arial",

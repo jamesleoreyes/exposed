@@ -14,7 +14,7 @@ interface DataRowProps {
 
 function formatValue(value: DataRowProps["value"]): React.ReactNode {
   if (value === null) {
-    return <span className="text-muted-foreground/40">&mdash;</span>;
+    return <span className="text-muted-foreground/70">-</span>;
   }
 
   if (typeof value === "boolean") {
@@ -44,12 +44,12 @@ export function DataRow({ label, value, tooltip }: DataRowProps) {
   return (
     <div className="flex items-baseline justify-between gap-3 py-1.5">
       <div className="flex items-center gap-1.5 shrink-0">
-        <span className="font-mono text-[11px] text-muted-foreground/70">
+        <span className="font-mono text-[11px] text-muted-foreground">
           {label}
         </span>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Info className="size-2.5 shrink-0 cursor-help text-muted-foreground/30 hover:text-muted-foreground/60" />
+            <Info className="size-2.5 shrink-0 cursor-help text-muted-foreground/60 hover:text-muted-foreground" />
           </TooltipTrigger>
           <TooltipContent side="top" className="max-w-xs text-xs">
             <p>{tooltip}</p>

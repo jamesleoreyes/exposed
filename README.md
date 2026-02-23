@@ -2,7 +2,7 @@
 
 See what a single webpage knows about you.
 
-Exposed is an educational browser fingerprinting tool that reveals your digital identity in plain English. No login, no cookies, no permissions — just a page load. Every data point is presented as a human-readable finding so anyone can understand what's being collected and why it matters.
+Exposed is an educational browser fingerprinting tool that reveals your digital identity in plain English. No login, no cookies, no permissions. Just a page load. Every data point is presented as a human-readable finding so anyone can understand what's being collected and why it matters.
 
 ## What it collects
 
@@ -23,7 +23,7 @@ Exposed demonstrates 12 categories of browser fingerprinting:
 | **Media Devices** | Count of connected cameras, microphones, speakers |
 | **Behavioral Signals** | Real-time mouse movement, clicks, keystrokes, scroll depth |
 
-All data is processed locally in your browser. The only external request is an optional IP geolocation lookup via [ip-api.com](https://ip-api.com) — and the app asks for your consent before making it.
+All data is processed locally in your browser. The only external request is an optional IP geolocation lookup via [ip-api.com](https://ip-api.com), and the app asks for your consent before making it.
 
 ## Getting started
 

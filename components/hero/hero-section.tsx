@@ -22,7 +22,7 @@ export function HeroSection({
 }: HeroSectionProps) {
   return (
     <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden">
-      {/* Surveillance vignette — dark edges, slightly lighter center */}
+      {/* Surveillance vignette */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
@@ -32,7 +32,7 @@ export function HeroSection({
       />
 
       <div className="relative z-10 flex flex-col items-center gap-10 px-4 py-24">
-        {/* The data hits first — your IP, stark and exposed */}
+        {/* The data hits first */}
         <div className="flex flex-col items-center gap-1">
           {ip ? (
             <span className="font-mono text-3xl font-bold tracking-tight text-primary md:text-5xl">
@@ -50,7 +50,7 @@ export function HeroSection({
           )}
         </div>
 
-        {/* The statement — after they see their own data */}
+        {/* The statement */}
         <div className="flex flex-col items-center gap-3">
           <h1 className="max-w-xl text-center text-xl font-normal tracking-tight text-foreground/80 md:text-2xl">
             We know this because you loaded a webpage.

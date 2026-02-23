@@ -13,7 +13,7 @@ interface Props {
 
 export function WebGLFingerprintDisplay({ data, loading }: Props) {
   const finding = data
-    ? `Your graphics card has a readable signature. We can see it's ${data.renderer ? `a ${data.renderer.split(",")[0].replace("ANGLE (", "").replace(")", "")}` : "present"} with ${data.extensions.length} supported extensions — a combination that persists across browsers.`
+    ? `Your graphics card has a readable signature. We can see it's ${data.renderer ? `a ${data.renderer.split(",")[0].replace("ANGLE (", "").replace(")", "")}` : "present"} with ${data.extensions.length} supported extensions, a combination that persists across browsers.`
     : "Reading your GPU signature...";
 
   return (

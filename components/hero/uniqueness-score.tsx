@@ -143,7 +143,7 @@ export function UniquenessScore({
         <p className="text-sm text-foreground/80">
           people share your exact browser fingerprint
         </p>
-        <span className="font-mono text-[10px] text-muted-foreground/40">
+        <span className="font-mono text-[10px] text-muted-foreground/70">
           {totalBits} bits of identifying entropy
         </span>
       </div>

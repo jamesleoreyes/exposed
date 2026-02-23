@@ -30,7 +30,7 @@ export function ActivityFeed({ events }: ActivityFeedProps) {
       className="max-h-[160px] overflow-y-auto border border-border bg-background p-2 font-mono text-[11px]"
     >
       {events.length === 0 ? (
-        <p className="py-4 text-center text-muted-foreground/40">
+        <p className="py-4 text-center text-muted-foreground/70">
           Waiting for interactions...
         </p>
       ) : (
@@ -40,7 +40,7 @@ export function ActivityFeed({ events }: ActivityFeedProps) {
               key={i}
               className="flex items-center gap-2 py-0.5 text-muted-foreground"
             >
-              <span className="shrink-0 tabular-nums text-muted-foreground/40 w-6 text-right">
+              <span className="shrink-0 tabular-nums text-muted-foreground/70 w-6 text-right">
                 {formatRelativeTime(event.time)}
               </span>
               <span className="shrink-0 uppercase text-[10px] tracking-wider text-primary/60 w-14">

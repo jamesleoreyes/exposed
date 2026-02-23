@@ -32,7 +32,7 @@ export function MouseTracker({
 
       ctx!.clearRect(0, 0, canvas!.width, canvas!.height);
 
-      // Draw trail — surveillance red, fading from transparent to visible
+      // Draw trail - surveillance red, fading from transparent to visible
       if (mouseTrail.length > 1) {
         for (let i = 1; i < mouseTrail.length; i++) {
           const opacity = 0.05 + (i / mouseTrail.length) * 0.6;
@@ -67,7 +67,7 @@ export function MouseTracker({
       ctx!.lineWidth = 1;
       ctx!.stroke();
 
-      // Coordinates — bottom left, monospace, dim
+      // Coordinates - bottom left, monospace, dim
       ctx!.fillStyle = "rgba(140, 140, 160, 0.5)";
       ctx!.font = "10px monospace";
       ctx!.fillText(

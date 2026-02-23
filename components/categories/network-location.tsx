@@ -30,8 +30,8 @@ export function NetworkLocation({ data, loading, enriching, onEnrich }: Props) {
   const finding = data
     ? isLocal
       ? data.enriched
-        ? `You're running this locally — your IP is ${data.ip}. On a live site, this would reveal your real public IP, which any website can use to determine your city, country, and ISP.`
-        : `You're running this locally — your IP is ${data.ip}. On a production server, every website would see your real public IP address instead.`
+        ? `You're running this locally. Your IP is ${data.ip}. On a live site, this would reveal your real public IP, which any website can use to determine your city, country, and ISP.`
+        : `You're running this locally. Your IP is ${data.ip}. On a production server, every website would see your real public IP address instead.`
       : data.enriched
         ? `We know you're in ${data.city || "an unknown city"}, ${data.country || "an unknown country"}. Your ISP is ${data.isp || "unknown"}. Your IP address ${data.ip} is visible to every site you visit.`
         : `Your IP address is ${data.ip}. Every website you visit sees this. With one additional lookup, we could pinpoint your city, country, and internet provider.`
@@ -56,7 +56,7 @@ export function NetworkLocation({ data, loading, enriching, onEnrich }: Props) {
           <DataRow
             label="Connection"
             value={data.connectionMedium}
-            tooltip="Physical connection medium — wifi, cellular, ethernet, or bluetooth"
+            tooltip="Physical connection medium: wifi, cellular, ethernet, or bluetooth"
           />
           <DataRow
             label="Effective Type"
@@ -79,11 +79,11 @@ export function NetworkLocation({ data, loading, enriching, onEnrich }: Props) {
             tooltip="Whether you have data saver mode enabled"
           />
 
-          {/* WebRTC local IPs — always available, no enrichment needed */}
+          {/* WebRTC local IPs - always available, no enrichment needed */}
           {vpn.webrtcIPs.length > 0 && (
             <>
               <div className="mt-3 mb-1 border-t border-border pt-3">
-                <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground/50">
+                <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground/80">
                   Local IPs via WebRTC
                 </span>
               </div>
@@ -101,7 +101,7 @@ export function NetworkLocation({ data, loading, enriching, onEnrich }: Props) {
           {data.enriched ? (
             <>
               <div className="mt-3 mb-1 border-t border-border pt-3">
-                <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground/50">
+                <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground/80">
                   Geolocation data from ip-api.com
                 </span>
               </div>
@@ -159,7 +159,7 @@ export function NetworkLocation({ data, loading, enriching, onEnrich }: Props) {
                         </p>
                       ))}
                       <p className="mt-2 text-[11px] leading-relaxed text-muted-foreground">
-                        A VPN hides your IP address — but your browser
+                        A VPN hides your IP address, but your browser
                         fingerprint is identical with or without it. The other 11
                         categories on this page are completely unaffected.
                       </p>
@@ -198,7 +198,7 @@ export function NetworkLocation({ data, loading, enriching, onEnrich }: Props) {
                     <span>
                       No data is stored by us. ip-api.com holds your IP in
                       memory for up to 60 seconds for rate limiting, then
-                      discards it — they do not log requests (
+                      discards it. They do not log requests (
                       <a
                         href="https://ip-api.com/docs/legal"
                         target="_blank"

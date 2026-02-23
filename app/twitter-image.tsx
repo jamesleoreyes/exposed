@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Exposed — See What Websites Know About You";
+export const alt = "Exposed - See What Websites Know About You";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -112,7 +112,7 @@ export default function TwitterImage() {
             textTransform: "uppercase",
           }}
         >
-          No data stored — everything runs in your browser
+          No data stored. Everything runs in your browser
         </div>
       </div>
     ),

@@ -23,7 +23,7 @@ export function PermissionsDisplay({ data, loading }: Props) {
   const finding = data
     ? grantedCount > 0
       ? `You've granted ${grantedCount} permission${grantedCount !== 1 ? "s" : ""} to other sites. Each "granted" or "denied" state reveals something about how you use the web.`
-      : `You've denied all ${deniedCount} permissions we checked — but even that pattern of denials is a distinguishing signal about you.`
+      : `You've denied all ${deniedCount} permissions we checked, but even that pattern of denials is a distinguishing signal about you.`
     : "Querying your permission states...";
 
   return (
@@ -42,7 +42,7 @@ export function PermissionsDisplay({ data, loading }: Props) {
               key={perm.name}
               label={formatPermissionName(perm.name)}
               value={perm.state}
-              tooltip={`The "${perm.name}" permission is currently "${perm.state}" — this state can be used to distinguish your browser from others.`}
+              tooltip={`The "${perm.name}" permission is currently "${perm.state}". This state can be used to distinguish your browser from others.`}
             />
           ))}
         </>

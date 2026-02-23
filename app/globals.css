@@ -88,40 +88,40 @@
 }
 
 .dark {
-  /* Void — the emptiness of being observed */
+  /* Void */
   --background: oklch(0.06 0.005 260);
   --foreground: oklch(0.93 0.005 250);
 
-  /* Surfaces — barely lifted from the void, institutional */
+  /* Surfaces */
   --card: oklch(0.10 0.008 260);
   --card-foreground: oklch(0.93 0.005 250);
   --popover: oklch(0.12 0.008 260);
   --popover-foreground: oklch(0.93 0.005 250);
 
-  /* Primary — recording-indicator red. Exposure. Danger. */
+  /* Primary - recording-indicator red */
   --primary: oklch(0.65 0.25 25);
   --primary-foreground: oklch(0.98 0 0);
 
-  /* Secondary — cold institutional surface */
+  /* Secondary */
   --secondary: oklch(0.14 0.006 260);
   --secondary-foreground: oklch(0.90 0.005 250);
 
-  /* Muted — surveillance monitor dim */
+  /* Muted - 0.60 meets WCAG AA on 0.06 bg */
   --muted: oklch(0.14 0.006 260);
-  --muted-foreground: oklch(0.50 0.008 250);
+  --muted-foreground: oklch(0.60 0.008 250);
 
-  /* Accent — same cold surface */
+  /* Accent */
   --accent: oklch(0.14 0.008 260);
   --accent-foreground: oklch(0.93 0.005 250);
 
   --destructive: oklch(0.65 0.25 25);
 
-  /* Borders — barely-there, institutional hairlines */
+  /* Borders */
   --border: oklch(1 0 0 / 8%);
   --input: oklch(1 0 0 / 10%);
   --ring: oklch(0.65 0.25 25);
 
-  /* Chart colors — desaturated, clinical */
+  /* Chart colors */
   --chart-1: oklch(0.65 0.25 25);
   --chart-2: oklch(0.50 0.008 250);
   --chart-3: oklch(0.70 0.12 195);
@@ -138,7 +138,7 @@
   --sidebar-border: oklch(1 0 0 / 6%);
   --sidebar-ring: oklch(0.65 0.25 25);
 
-  /* Threat levels — clinical, unmistakable */
+  /* Threat levels */
   --risk-low: oklch(0.68 0.10 195);
   --risk-medium: oklch(0.78 0.16 80);
   --risk-high: oklch(0.65 0.25 25);

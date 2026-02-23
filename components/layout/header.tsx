@@ -46,7 +46,9 @@ export function Header() {
           href="https://github.com/jamesleoreyes/exposed"
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute left-1/2 -translate-x-1/2 text-muted-foreground/60 hover:text-muted-foreground"
+          aria-label="View source on GitHub"
+          title="View source on GitHub"
+          className="absolute left-1/2 -translate-x-1/2 text-muted-foreground hover:text-foreground"
         >
           <GitHubIcon className="size-4" />
         </Link>
@@ -54,8 +56,8 @@ export function Header() {
           <span className="font-mono text-[11px] tabular-nums text-muted-foreground">
             {minutes}:{seconds}
           </span>
-          <span className="text-[10px] uppercase tracking-widest text-muted-foreground/60">
-            Session Active
+          <span className="text-[10px] uppercase tracking-widest text-muted-foreground">
+            Current Session
           </span>
         </div>
       </div>

@@ -13,7 +13,7 @@ interface Props {
 
 export function CanvasFingerprintDisplay({ data, loading }: Props) {
   const finding = data
-    ? `We drew invisible shapes on your screen and read back the pixels. Your GPU rendered them in a way that's unique to your device — fingerprint: ${data.hash.slice(0, 12)}…`
+    ? `We drew invisible shapes on your screen and read back the pixels. Your GPU rendered them in a way that's unique to your device. Fingerprint: ${data.hash.slice(0, 12)}…`
     : "Rendering canvas fingerprint...";
 
   return (
@@ -37,6 +37,8 @@ export function CanvasFingerprintDisplay({ data, loading }: Props) {
               <img
                 src={data.dataUrl}
                 alt="Canvas fingerprint rendering"
+                width={280}
+                height={60}
                 className="w-full rounded border border-border/50"
               />
               <p className="text-xs text-muted-foreground">

@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const title = "Exposed — See What Websites Know About You";
+const title = "Exposed - See What Websites Know About You";
 const description =
-  "An educational tool that reveals every piece of data a website can collect about you — IP, location, hardware, canvas, audio, fonts, and more — just by loading a page. No data is stored.";
+  "An educational tool that reveals every piece of data a website can collect about you: IP, location, hardware, canvas, audio, fonts, and more. Just by loading a page. No data is stored.";
 
 export const metadata: Metadata = {
   title,
