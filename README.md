@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Exposed
 
-## Getting Started
+See what a single webpage knows about you.
 
-First, run the development server:
+Exposed is an educational browser fingerprinting tool that reveals your digital identity in plain English. No login, no cookies, no permissions — just a page load. Every data point is presented as a human-readable finding so anyone can understand what's being collected and why it matters.
+
+## What it collects
+
+Exposed demonstrates 12 categories of browser fingerprinting:
+
+| Category | What it reveals |
+|---|---|
+| **Network & Location** | IP address, with opt-in geolocation lookup |
+| **Browser & OS** | Browser, version, operating system, language preferences |
+| **Hardware Profile** | CPU cores, memory, screen resolution, GPU |
+| **Canvas Fingerprint** | Unique rendering signature from invisible drawn shapes |
+| **WebGL Fingerprint** | Graphics card signature via WebGL introspection |
+| **Audio Fingerprint** | Unique audio processing characteristics |
+| **Font Detection** | Installed fonts detected via silent measurement |
+| **Timezone & Locale** | Timezone, locale, number/date/currency formatting |
+| **Storage & Tracking** | Supported tracking mechanisms (cookies, localStorage, etc.) |
+| **Permissions** | Browser permission states |
+| **Media Devices** | Count of connected cameras, microphones, speakers |
+| **Behavioral Signals** | Real-time mouse movement, clicks, keystrokes, scroll depth |
+
+All data is processed locally in your browser. The only external request is an optional IP geolocation lookup via [ip-api.com](https://ip-api.com) — and the app asks for your consent before making it.
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- [Next.js](https://nextjs.org) 16 (App Router, Turbopack)
+- [React](https://react.dev) 19
+- [TypeScript](https://www.typescriptlang.org)
+- [Tailwind CSS](https://tailwindcss.com) v4
+- [shadcn/ui](https://ui.shadcn.com)
+- [Motion](https://motion.dev) (animations)
 
-## Learn More
+## Privacy
 
-To learn more about Next.js, take a look at the following resources:
+- All fingerprinting runs client-side in your browser
+- No data is stored, logged, or sent to any server
+- The only external API call (IP geolocation via ip-api.com) is opt-in with full disclosure
+- No analytics, no tracking scripts, no third-party resources
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[MIT](LICENSE)
