@@ -122,8 +122,9 @@ export function NetworkLocation({ data, loading, enriching, onEnrich }: Props) {
                   <li className="flex gap-2">
                     <span className="text-primary/60">&#8250;</span>
                     <span>
-                      No data is stored by us — but ip-api.com may log the
-                      request per their{" "}
+                      No data is stored by us. ip-api.com holds your IP in
+                      memory for up to 60 seconds for rate limiting, then
+                      discards it — they do not log requests (
                       <a
                         href="https://ip-api.com/docs/legal"
                         target="_blank"
@@ -133,13 +134,14 @@ export function NetworkLocation({ data, loading, enriching, onEnrich }: Props) {
                         privacy policy
                         <ExternalLink className="size-2.5" />
                       </a>
+                      )
                     </span>
                   </li>
                 </ul>
                 <button
                   onClick={onEnrich}
                   disabled={enriching}
-                  className="mt-2 w-full border border-primary/30 bg-primary/5 px-3 py-2 font-mono text-[11px] uppercase tracking-wider text-primary transition-colors hover:bg-primary/10 disabled:opacity-50"
+                  className="mt-2 w-full border border-primary/30 bg-primary/5 px-3 py-2 font-mono text-[11px] uppercase tracking-wider text-primary transition-colors hover:bg-primary/10 disabled:opacity-50 cursor-pointer"
                 >
                   {enriching ? "Looking up..." : "Look up my location"}
                 </button>
