@@ -17,7 +17,7 @@ export function useNetworkInfo() {
         if (!res.ok) throw new Error(`IP API returned ${res.status}`);
         const { ip } = await res.json();
 
-        const conn = "connection" in navigator ? (navigator as Navigator & { connection: { effectiveType?: string; downlink?: number; rtt?: number; saveData?: boolean } }).connection : null;
+        const conn = "connection" in navigator ? (navigator as Navigator & { connection: { effectiveType?: string; type?: string; downlink?: number; rtt?: number; saveData?: boolean } }).connection : null;
 
         setData({
           ip: ip ?? "",
@@ -28,6 +28,7 @@ export function useNetworkInfo() {
           lat: null,
           lon: null,
           connectionType: conn?.effectiveType ?? null,
+          connectionMedium: conn?.type ?? null,
           downlink: conn?.downlink ?? null,
           rtt: conn?.rtt ?? null,
           saveData: conn?.saveData ?? null,

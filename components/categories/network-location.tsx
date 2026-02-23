@@ -54,9 +54,14 @@ export function NetworkLocation({ data, loading, enriching, onEnrich }: Props) {
             tooltip="Your public IP address, visible to every website you visit"
           />
           <DataRow
-            label="Connection Type"
+            label="Connection"
+            value={data.connectionMedium}
+            tooltip="Physical connection medium — wifi, cellular, ethernet, or bluetooth"
+          />
+          <DataRow
+            label="Effective Type"
             value={data.connectionType}
-            tooltip="Network connection type (e.g., 4g, wifi)"
+            tooltip="Estimated connection quality (4g, 3g, 2g, slow-2g)"
           />
           <DataRow
             label="Downlink Speed"

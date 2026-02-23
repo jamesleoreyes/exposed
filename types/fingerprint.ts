@@ -16,6 +16,7 @@ export interface NetworkInfo {
   lat: number | null;
   lon: number | null;
   connectionType: string | null;
+  connectionMedium: string | null;
   downlink: number | null;
   rtt: number | null;
   saveData: boolean | null;
