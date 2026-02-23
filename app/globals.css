@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
@@ -152,16 +151,6 @@
   body {
     @apply bg-background text-foreground;
   }
-}
-
-/* Recording indicator pulse */
-@keyframes pulse-recording {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
-}
-
-.animate-recording {
-  animation: pulse-recording 2s ease-in-out infinite;
 }
 
 /* Subtle scan line overlay for surveillance feel */

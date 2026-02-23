@@ -49,7 +49,7 @@ export function DataRow({ label, value, tooltip }: DataRowProps) {
         </span>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Info className="size-2.5 shrink-0 cursor-help text-muted-foreground/30 hover:text-muted-foreground/60 transition-colors" />
+            <Info className="size-2.5 shrink-0 cursor-help text-muted-foreground/30 hover:text-muted-foreground/60" />
           </TooltipTrigger>
           <TooltipContent side="top" className="max-w-xs text-xs">
             <p>{tooltip}</p>

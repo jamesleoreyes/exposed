@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "motion/react";
 import { useFingerprint } from "@/hooks/use-fingerprint";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -159,20 +158,13 @@ export function HomePage() {
 
         <section className="mx-auto max-w-6xl px-4 pb-20">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            {categories.map((cat, index) => (
-              <motion.div
+            {categories.map((cat) => (
+              <div
                 key={cat.key}
                 className={cat.fullWidth ? "md:col-span-2" : ""}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  delay: index * 0.06,
-                  duration: 0.3,
-                  ease: "easeOut",
-                }}
               >
                 {cat.component}
-              </motion.div>
+              </div>
             ))}
           </div>
         </section>

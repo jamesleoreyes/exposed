@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "motion/react";
 import { Skeleton } from "@/components/ui/skeleton";
 
 interface UniquenessScoreProps {
@@ -85,7 +84,6 @@ export function UniquenessScore({
 
   return (
     <div className="flex flex-col items-center gap-5">
-      {/* Ring — visual emphasis, no text inside */}
       <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
         <circle
           cx={center}
@@ -95,7 +93,7 @@ export function UniquenessScore({
           stroke="var(--color-border)"
           strokeWidth={strokeWidth}
         />
-        <motion.circle
+        <circle
           cx={center}
           cy={center}
           r={radius}
@@ -104,9 +102,7 @@ export function UniquenessScore({
           strokeWidth={strokeWidth}
           strokeLinecap="round"
           strokeDasharray={circumference}
-          initial={{ strokeDashoffset: circumference }}
-          animate={{ strokeDashoffset: offset }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          strokeDashoffset={offset}
           transform={`rotate(-90 ${center} ${center})`}
         />
         <text

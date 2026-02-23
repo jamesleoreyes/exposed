@@ -37,7 +37,7 @@ export function Header() {
     <header className="fixed top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-sm">
       <div className="relative mx-auto flex h-12 max-w-6xl items-center justify-between px-4">
         <div className="flex items-center gap-2">
-          <span className="inline-block size-2 rounded-full bg-primary animate-recording" />
+          <span className="inline-block size-2 rounded-full bg-primary" />
           <span className="font-mono text-[11px] font-medium tracking-widest text-primary uppercase">
             Exposed
           </span>
@@ -46,7 +46,7 @@ export function Header() {
           href="https://github.com/jamesleoreyes/exposed"
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute left-1/2 -translate-x-1/2 text-muted-foreground/60 transition-colors hover:text-muted-foreground"
+          className="absolute left-1/2 -translate-x-1/2 text-muted-foreground/60 hover:text-muted-foreground"
         >
           <GitHubIcon className="size-4" />
         </Link>
