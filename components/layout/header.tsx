@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "@/components/layout/theme-toggle";
 
 function GitHubIcon({ className }: { className?: string }) {
   return (
@@ -35,28 +36,29 @@ export function Header() {
 
   return (
     <header className="fixed top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-sm">
-      <div className="relative mx-auto flex h-12 max-w-6xl items-center justify-between px-4">
+      <div className="mx-auto flex h-12 max-w-6xl items-center justify-between px-4">
         <div className="flex items-center gap-2">
           <span className="inline-block size-2 rounded-full bg-primary" />
           <span className="font-mono text-[11px] font-medium tracking-widest text-primary uppercase">
             Exposed
           </span>
         </div>
-        <Link
-          href="https://github.com/jamesleoreyes/exposed"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="View source on GitHub"
-          title="View source on GitHub"
-          className="absolute left-1/2 -translate-x-1/2 text-muted-foreground hover:text-foreground"
-        >
-          <GitHubIcon className="size-4" />
-        </Link>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
+          <Link
+            href="https://github.com/jamesleoreyes/exposed"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View source on GitHub"
+            title="View source on GitHub"
+            className="text-muted-foreground hover:text-foreground"
+          >
+            <GitHubIcon className="size-4" />
+          </Link>
+          <ThemeToggle />
           <span className="font-mono text-[11px] tabular-nums text-muted-foreground">
             {minutes}:{seconds}
           </span>
-          <span className="text-[10px] uppercase tracking-widest text-muted-foreground">
+          <span className="hidden text-[10px] uppercase tracking-widest text-muted-foreground sm:inline">
             Current Session
           </span>
         </div>

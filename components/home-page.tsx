@@ -130,7 +130,7 @@ export function HomePage() {
   const totalDataPoints = categories.length;
 
   return (
-    <div className="min-h-screen scan-lines">
+    <div className="min-h-screen">
       <Header />
       <main className="pt-12">
         <HeroSection

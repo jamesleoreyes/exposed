@@ -21,17 +21,8 @@ export function HeroSection({
   loading,
 }: HeroSectionProps) {
   return (
-    <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden">
-      {/* Surveillance vignette */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse at center, oklch(0.10 0.01 260 / 40%) 0%, transparent 60%)",
-        }}
-      />
-
-      <div className="relative z-10 flex flex-col items-center gap-10 px-4 py-24">
+    <section className="flex min-h-[80vh] items-center justify-center">
+      <div className="flex flex-col items-center gap-10 px-4 py-24">
         {/* The data hits first */}
         <div className="flex flex-col items-center gap-1">
           {ip ? (
