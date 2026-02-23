@@ -1,0 +1,25 @@
+export const EXPLANATIONS: Record<string, string> = {
+  network: `Your IP address is the most direct identifier a website receives. It reveals your approximate physical location (often down to the neighborhood), your Internet Service Provider, and can be used to link your activity across different websites. Even in "private browsing" mode, your IP remains visible to every server you connect to. Combined with timestamps, it can map your daily routine — when you're home, at work, or traveling.`,
+
+  browser: `Your browser's identity string contains a surprisingly specific combination of browser name, version, operating system, and device type. While each individual detail seems generic, the combination narrows you down significantly. Your language preferences reveal your nationality and multilingual background. The "Do Not Track" setting ironically makes you more identifiable — only about 12% of users enable it, making it a distinguishing signal rather than protection.`,
+
+  hardware: `Your device's hardware profile — CPU cores, memory, screen resolution, pixel ratio, and GPU — creates a semi-unique signature. A 6-core CPU with 8GB RAM, a 2560x1440 screen at 2x pixel ratio, and a specific GPU is a combination shared by relatively few people. Touch capability and available screen area (which reveals your taskbar/dock size) add further discrimination.`,
+
+  canvas: `Canvas fingerprinting is one of the most powerful tracking techniques. The website draws invisible text and shapes on an HTML5 Canvas element, then reads back the pixel data. Due to differences in your GPU, graphics drivers, font rendering engine, and anti-aliasing implementation, the resulting image is subtly unique to your specific hardware and software combination. This happens invisibly in milliseconds and works even without cookies.`,
+
+  webgl: `WebGL exposes your exact graphics card model, driver version, and supported rendering capabilities. The combination of GPU vendor, renderer string, maximum texture size, and supported extensions creates a hardware fingerprint that persists across browser sessions and even across different browsers on the same machine. This data was designed for 3D rendering but serves equally well for identification.`,
+
+  audio: `Audio fingerprinting works like canvas fingerprinting but for sound. The website creates an inaudible tone using an oscillator and processes it through a compressor. Tiny differences in your audio hardware, drivers, and signal processing pipeline produce a measurably unique output. This technique was discovered by researchers at Princeton and is used by real tracking scripts in the wild.`,
+
+  fonts: `Your installed font collection is remarkably unique. System fonts vary by OS, but any additional fonts you've installed — for design work, development, or just personal preference — create a distinctive set. A website can silently detect which fonts you have by rendering invisible text and measuring the width differences. Your font list can narrow your identity to a very small group of users.`,
+
+  timezone: `Your timezone and locale settings reveal your geographic region and cultural context. While timezone alone is shared by millions, the specific combination of timezone, locale formatting preferences (date format, number separators, currency), and language creates additional identifying bits. These values also hint at whether you're using a VPN — if your IP says New York but your timezone says Tokyo, that's a signal.`,
+
+  storage: `The availability of different storage mechanisms (cookies, localStorage, sessionStorage, IndexedDB, Service Workers) creates a browser capability profile. More importantly, these are the tools used to persist tracking identifiers across visits. Even if you clear cookies, trackers can store identifiers in IndexedDB or localStorage as backup. Some techniques store bits across multiple mechanisms simultaneously as "zombie cookies" that resurrect each other.`,
+
+  permissions: `By querying your browser's permission states, a website can learn which capabilities you've previously granted or denied to other sites. If your camera permission shows "granted," it means you've allowed camera access somewhere before — revealing that you use video calling or streaming. Permission states create a behavioral profile of how you use the web.`,
+
+  media: `Enumerating your media devices reveals how many cameras and microphones are connected to your system. A laptop with one camera and one mic is common, but a desktop with an external webcam, a USB microphone, and two audio outputs is more distinctive. The list of supported media codecs varies by browser and OS, adding another fingerprinting vector.`,
+
+  behavioral: `Every mouse movement, scroll, click, and keystroke can be tracked in real time. Your cursor trajectory, movement speed, hesitation patterns, and scroll behavior are measurably unique — like a behavioral biometric. Websites use this for bot detection (CAPTCHAs), but the same data reveals whether you're left or right-handed, how engaged you are, and can even identify you across sessions by your typing rhythm alone.`,
+};
