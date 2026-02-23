@@ -13,15 +13,29 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const title = "Exposed — See What Websites Know About You";
+const description =
+  "An educational tool that reveals every piece of data a website can collect about you — IP, location, hardware, canvas, audio, fonts, and more — just by loading a page. No data is stored.";
+
 export const metadata: Metadata = {
-  title: "Exposed — See What Websites Know About You",
-  description:
-    "An educational tool that reveals every piece of data a website can collect about you just by visiting. No data is stored — everything runs in your browser.",
+  title,
+  description,
+  metadataBase: new URL("https://howami.exposed"),
   openGraph: {
-    title: "Exposed — See What Websites Know About You",
-    description:
-      "An educational tool that reveals every piece of data a website can collect about you just by visiting.",
+    title,
+    description,
+    siteName: "Exposed",
     type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
