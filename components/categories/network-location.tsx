@@ -17,7 +17,8 @@ interface Props {
 export function NetworkLocation({ data, loading, enriching, onEnrich }: Props) {
   const vpn = useVpnDetection(
     data?.ipTimezone ?? null,
-    data?.enriched ?? false
+    data?.enriched ?? false,
+    data?.ip ?? null
   );
 
   const isLocal =

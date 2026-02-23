@@ -9,31 +9,49 @@ interface UniquenessScoreProps {
   totalBits: number;
 }
 
-function formatPopulation(bits: number): string {
-  if (bits <= 0) return "1";
+function formatPopulation(bits: number): { number: string; label: string } {
+  if (bits <= 0) return { number: "1", label: "" };
   const population = Math.pow(2, bits);
-  if (population < 1_000) return Math.round(population).toLocaleString();
-  if (population < 1_000_000) {
-    return Math.round(population / 1_000).toLocaleString() + " thousand";
-  }
+  if (population < 1_000)
+    return { number: Math.round(population).toLocaleString(), label: "" };
+  if (population < 1_000_000)
+    return {
+      number: Math.round(population / 1_000).toLocaleString(),
+      label: "thousand",
+    };
   if (population < 1_000_000_000) {
     const m = population / 1_000_000;
-    return (m >= 100 ? Math.round(m) : +m.toFixed(1)) + " million";
+    return {
+      number: String(m >= 100 ? Math.round(m) : +m.toFixed(1)),
+      label: "million",
+    };
   }
   if (population < 1_000_000_000_000) {
     const b = population / 1_000_000_000;
-    return (b >= 100 ? Math.round(b) : +b.toFixed(1)) + " billion";
+    return {
+      number: String(b >= 100 ? Math.round(b) : +b.toFixed(1)),
+      label: "billion",
+    };
   }
   if (population < 1e15) {
     const t = population / 1_000_000_000_000;
-    return (t >= 100 ? Math.round(t) : +t.toFixed(1)) + " trillion";
+    return {
+      number: String(t >= 100 ? Math.round(t) : +t.toFixed(1)),
+      label: "trillion",
+    };
   }
   if (population < 1e18) {
     const q = population / 1e15;
-    return (q >= 100 ? Math.round(q) : +q.toFixed(1)) + " quadrillion";
+    return {
+      number: String(q >= 100 ? Math.round(q) : +q.toFixed(1)),
+      label: "quadrillion",
+    };
   }
   const qi = population / 1e18;
-  return (qi >= 100 ? Math.round(qi) : +qi.toFixed(1)) + " quintillion";
+  return {
+    number: String(qi >= 100 ? Math.round(qi) : +qi.toFixed(1)),
+    label: "quintillion",
+  };
 }
 
 export function UniquenessScore({
@@ -63,11 +81,11 @@ export function UniquenessScore({
     );
   }
 
-  const populationStr = formatPopulation(totalBits);
+  const pop = formatPopulation(totalBits);
 
   return (
-    <div className="flex flex-col items-center gap-4">
-      {/* Ring with score percentage inside */}
+    <div className="flex flex-col items-center gap-5">
+      {/* Ring — visual emphasis, no text inside */}
       <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
         <circle
           cx={center}
@@ -93,27 +111,41 @@ export function UniquenessScore({
         />
         <text
           x={center}
-          y={center}
+          y={pop.label ? center - 8 : center}
           textAnchor="middle"
           dominantBaseline="middle"
           className="fill-foreground"
           style={{
-            fontSize: "1.5rem",
+            fontSize: "1.1rem",
             fontWeight: 700,
             fontFamily: "var(--font-mono)",
           }}
         >
-          {score}%
+          1 in {pop.number}
         </text>
+        {pop.label && (
+          <text
+            x={center}
+            y={center + 12}
+            textAnchor="middle"
+            dominantBaseline="middle"
+            className="fill-muted-foreground"
+            style={{
+              fontSize: "0.6rem",
+              fontFamily: "var(--font-mono)",
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+            }}
+          >
+            {pop.label}
+          </text>
+        )}
       </svg>
 
-      {/* The "1 in X" statement — outside the ring, bigger and clearer */}
+      {/* Clarifying text */}
       <div className="flex flex-col items-center gap-1 text-center">
         <p className="text-sm text-foreground/80">
-          <span className="font-mono font-bold text-foreground">
-            1 in {populationStr}
-          </span>{" "}
-          people share your browser fingerprint
+          people share your exact browser fingerprint
         </p>
         <span className="font-mono text-[10px] text-muted-foreground/40">
           {totalBits} bits of identifying entropy
