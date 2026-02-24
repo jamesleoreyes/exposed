@@ -15,6 +15,11 @@ export function Footer() {
           <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground/70">
             Built for educational awareness
           </p>
+          <p className="mt-1 text-xs text-muted-foreground/60">
+            <a href="/privacy" className="hover:text-foreground underline underline-offset-2">
+              Privacy Policy
+            </a>
+          </p>
         </div>
       </div>
     </footer>

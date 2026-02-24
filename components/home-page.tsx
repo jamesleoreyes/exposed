@@ -131,8 +131,14 @@ export function HomePage() {
 
   return (
     <div className="min-h-screen">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-0 focus:left-0 focus:z-[100] focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:text-sm"
+      >
+        Skip to main content
+      </a>
       <Header />
-      <main className="pt-12">
+      <main id="main-content" className="pt-12">
         <HeroSection
           ip={network.data?.ip ?? null}
           city={network.data?.city ?? null}
