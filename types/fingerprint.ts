@@ -28,6 +28,7 @@ export interface BrowserInfo {
   userAgent: string;
   browserName: string;
   browserVersion: string;
+  detectionMethod: string;
   os: string;
   osVersion: string;
   platform: string;

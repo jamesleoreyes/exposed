@@ -43,6 +43,11 @@ export function BrowserOs({ data, loading }: Props) {
             tooltip="Your browser's exact version number, which narrows your identity"
           />
           <DataRow
+            label="Detected Via"
+            value={data.detectionMethod}
+            tooltip="How we identified your browser: client-hints (modern API), brave-api, arc-css, opera-global, or ua-string (fallback user agent parsing)"
+          />
+          <DataRow
             label="Operating System"
             value={data.os}
             tooltip="The operating system running on your device"
