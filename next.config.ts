@@ -1,6 +1,6 @@
-import { withBotId } from "botid/next/config";
+import type { NextConfig } from "next";
 
-const nextConfig = {
+const nextConfig: NextConfig = {
   async headers() {
     return [
       {
@@ -41,4 +41,4 @@ const nextConfig = {
   },
 };
 
-export default withBotId(nextConfig);
+export default nextConfig;
