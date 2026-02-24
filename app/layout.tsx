@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 const title = "Exposed - See What Websites Know About You";
 const description =
-  "See every piece of data websites silently collect about you: IP address, location, hardware specs, canvas and audio fingerprints, fonts, and more. No data is stored.";
+  "See every piece of data websites silently collect about you: IP, location, hardware, canvas and audio fingerprints, fonts, and more. No data stored.";
 
 export const metadata: Metadata = {
   title,

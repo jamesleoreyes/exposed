@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Privacy Policy - Exposed Browser Fingerprinting Tool",
   description:
-    "Privacy policy for Exposed, an educational browser fingerprinting tool. No personal information is stored, no cookies are set, and no tracking scripts are loaded.",
+    "Privacy policy for Exposed, an educational browser fingerprinting tool. No personal information is stored and no tracking scripts are loaded.",
   alternates: {
     canonical: "https://howami.exposed/privacy",
   },
