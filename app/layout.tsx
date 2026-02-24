@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   description,
   metadataBase: new URL("https://howami.exposed"),
   openGraph: {
+    url: "https://howami.exposed",
     title,
     description,
     siteName: "Exposed",
