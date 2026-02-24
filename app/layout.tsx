@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 const title = "Exposed - See What Websites Know About You";
 const description =
-  "See every piece of data websites silently collect: IP, location, hardware, canvas, fonts, and more. No data stored.";
+  "See every piece of data websites silently collect about you: IP address, location, hardware specs, canvas and audio fingerprints, fonts, and more. No data is stored.";
 
 export const metadata: Metadata = {
   title,
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://howami.exposed",
+    canonical: "https://howami.exposed/",
   },
 };
 
