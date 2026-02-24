@@ -50,6 +50,10 @@ Open [http://localhost:3000](http://localhost:3000).
 - The only external API call (IP geolocation via ip-api.com) is opt-in with full disclosure
 - No analytics, no tracking scripts, no third-party resources
 
+## Disclaimer
+
+This project is for educational and fun purposes only. It was entirely 100% vibe coded.
+
 ## License
 
 [MIT](LICENSE)
